@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="400.0" maxWidth="700" minHeight="400.0" minWidth="700.0" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #2E3348;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SignUpController">
+    <children>
+        <AnchorPane layoutX="1.0" layoutY="99.0" prefHeight="300.0" prefWidth="698.0" style="-fx-background-color: #fafafa;">
+            <children>
+                <TextField fx:id="signUpLogin" layoutX="28.0" layoutY="70.0" prefHeight="25.0" prefWidth="315.0" promptText="Login" style="-fx-border-color: silver;" />
+                <Button fx:id="signUpButtonRegister" layoutX="280.0" layoutY="204.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="161.0" style="-fx-background-color: #F39C63; -fx-cursor: hand;" text="Do register" textFill="WHITE">
+                    <font>
+                        <Font name="Arial" size="20.0" />
+                    </font>
+                </Button>
+                <PasswordField fx:id="signUpPassword" layoutX="360.0" layoutY="71.0" prefHeight="25.0" prefWidth="315.0" promptText="Password" />
+            <TextField fx:id="signUpName" layoutX="28.0" layoutY="26.0" prefHeight="25.0" prefWidth="315.0" promptText="Name" style="-fx-border-color: silver;" />
+            <TextField fx:id="signUpTitle" layoutX="360.0" layoutY="26.0" prefHeight="25.0" prefWidth="315.0" promptText="Title" style="-fx-border-color: silver;" />
+            <TextField fx:id="signUpLocation" layoutX="192.0" layoutY="161.0" prefHeight="25.0" prefWidth="315.0" promptText="Location" style="-fx-border-color: silver;" />
+            <CheckBox fx:id="signUpCheckBoxMan" layoutX="199.0" layoutY="107.0" mnemonicParsing="false" selected="true" text="Man" />
+            <CheckBox fx:id="signUpCheckBoxWoman" layoutX="371.0" layoutY="107.0" mnemonicParsing="false" text="Woman" />
+            </children>
+        </AnchorPane>
+        <Label layoutX="237.0" layoutY="22.0" prefHeight="38.0" prefWidth="231.0" text="MainPageLabel" textFill="WHITE">
+            <font>
+                <Font name="Arial" size="33.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>
