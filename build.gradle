@@ -17,5 +17,5 @@ repositories {
 
 
 application {
-    mainClassName = 'TestFX.App'
+    mainClassName = 'Main.java'
 }
