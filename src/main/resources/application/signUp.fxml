@@ -23,12 +23,12 @@
             <TextField fx:id="signUpName" layoutX="28.0" layoutY="26.0" prefHeight="25.0" prefWidth="315.0" promptText="Name" style="-fx-border-color: silver;" />
             <TextField fx:id="signUpTitle" layoutX="360.0" layoutY="26.0" prefHeight="25.0" prefWidth="315.0" promptText="Title" style="-fx-border-color: silver;" />
             <TextField fx:id="signUpLocation" layoutX="192.0" layoutY="161.0" prefHeight="25.0" prefWidth="315.0" promptText="Location" style="-fx-border-color: silver;" />
-            <RadioButton layoutX="410.0" layoutY="116.0" mnemonicParsing="false" text="Woman">
+            <RadioButton fx:id="radio_Woman" layoutX="410.0" layoutY="116.0" mnemonicParsing="false" text="Woman">
                <toggleGroup>
                   <ToggleGroup fx:id="register_gender_radio" />
                </toggleGroup>
             </RadioButton>
-            <RadioButton layoutX="249.0" layoutY="116.0" mnemonicParsing="false" selected="true" text="Man" toggleGroup="$register_gender_radio" />
+            <RadioButton fx:id="radio_Man" layoutX="249.0" layoutY="116.0" mnemonicParsing="false" selected="true" text="Man" toggleGroup="$register_gender_radio" />
             </children>
         </AnchorPane>
         <Label layoutX="262.0" layoutY="14.0" prefHeight="38.0" prefWidth="177.0" text="Registration" textFill="WHITE">

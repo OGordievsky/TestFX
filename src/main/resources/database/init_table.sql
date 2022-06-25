@@ -13,4 +13,4 @@ CREATE TABLE users
     location VARCHAR                       NOT NULL,
     gender   BOOL             DEFAULT TRUE NOT NULL
 );
-CREATE UNIQUE INDEX users_unique_idx ON users (id);
+CREATE UNIQUE INDEX users_unique_idx ON users (login);
