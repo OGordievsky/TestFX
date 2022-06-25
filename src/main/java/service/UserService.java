@@ -3,6 +3,8 @@ package service;
 import model.User;
 import repository.UserRepository;
 
+import java.util.List;
+
 public class UserService {
     private final UserRepository userRepository = new UserRepository();
 
@@ -12,5 +14,17 @@ public class UserService {
 
     public boolean addUser(User user, String password){
         return userRepository.addUser(user, password);
+    }
+
+    public List<User> getAll() {
+        return userRepository.getAll();
+    }
+
+    public User getUser(String stId) {
+        return userRepository.getUser(stId);
+    }
+
+    public boolean updateUser(User user) {
+        return userRepository.updateUser(user);
     }
 }

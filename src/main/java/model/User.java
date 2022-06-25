@@ -6,7 +6,7 @@ public class User {
     private String title;
     private String login;
     private String location;
-    private boolean gender;
+    private String gender;
 
     public User() {
     }
@@ -16,7 +16,7 @@ public class User {
         this.title = title;
         this.login = login;
         this.location = location;
-        this.gender = gender;
+        this.gender = gender ? "Man" : "Woman";
     }
 
     public Long getId() {
@@ -51,12 +51,16 @@ public class User {
         this.location = location;
     }
 
-    public boolean isGender() {
+    public String getGender() {
         return gender;
     }
 
+    public boolean isGender(){
+        return this.gender.equals("Man");
+    }
+
     public void setGender(boolean gender) {
-        this.gender = gender;
+        this.gender = gender ? "Man" : "Woman";
     }
 
     public String getLogin() {
