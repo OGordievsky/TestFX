@@ -12,7 +12,7 @@
     <children>
         <AnchorPane layoutX="1.0" layoutY="99.0" prefHeight="300.0" prefWidth="698.0" style="-fx-background-color: #fafafa;">
             <children>
-                <TextField fx:id="signUpLogin" layoutX="369.0" layoutY="27.0" prefHeight="25.0" prefWidth="315.0" promptText="Login" style="-fx-border-color: silver;" visible="$LabelVisible" />
+                <TextField fx:id="signUpLogin" layoutX="369.0" layoutY="27.0" prefHeight="25.0" prefWidth="315.0" promptText="Login" style="-fx-border-color: silver;" visible="false" />
                 <Button fx:id="edit_Cancel_Button" layoutX="383.0" layoutY="207.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="161.0" style="-fx-background-color: #F39C63; -fx-cursor: hand;" text="Cancel" textFill="WHITE">
                     <font>
                         <Font name="Arial" size="20.0" />
@@ -32,7 +32,7 @@
                   <Font name="Arial" size="20.0" />
                </font>
             </Button>
-            <TextField fx:id="signUpPassword" layoutX="369.0" layoutY="70.0" prefHeight="25.0" prefWidth="315.0" promptText="Password" style="-fx-border-color: silver;" visible="$LabelVisible" />
+            <TextField fx:id="signUpPassword" layoutX="369.0" layoutY="70.0" prefHeight="25.0" prefWidth="315.0" promptText="Password" style="-fx-border-color: silver;" visible="false" />
             </children>
         </AnchorPane>
         <Label fx:id="title_edit_Page" layoutX="30.0" layoutY="22.0" prefHeight="38.0" prefWidth="207.0" text="Edit User" textAlignment="RIGHT" textFill="WHITE">
@@ -40,10 +40,10 @@
                 <Font name="Arial" size="33.0" />
             </font>
         </Label>
-      <Label fx:id="titleUserID" layoutX="251.0" layoutY="22.0" prefHeight="38.0" prefWidth="416.0" textFill="WHITE" text="$LabelId">
-         <font>
-            <Font name="Arial" size="33.0" />
-         </font>
-      </Label>
+        <Label fx:id="titleUserID" layoutX="251.0" layoutY="22.0" prefHeight="38.0" prefWidth="416.0" textFill="WHITE" text="$LabelId">
+            <font>
+                <Font name="Arial" size="33.0"/>
+            </font>
+        </Label>
     </children>
 </AnchorPane>

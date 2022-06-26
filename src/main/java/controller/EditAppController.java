@@ -15,9 +15,6 @@ public class EditAppController extends AbstractController {
 
     public static final String PAGE_URL = "/application/editApp.fxml";
 
-    private User user;
-    private String pass = "";
-
     @FXML
     private ResourceBundle resources;
 
@@ -63,27 +60,31 @@ public class EditAppController extends AbstractController {
     @FXML
     void initialize() {
         String index = titleUserID.getText();
-        if (!index.isEmpty()) {
-            user = userService.getUser(titleUserID.getText());
+        if (!index.isEmpty() && !index.equals("-1")) {
             title_edit_Page.setText("Edit user");
-            initPage();
+            initPage(userService.getUser(titleUserID.getText()));
         } else {
-//            signUpLogin.setVisible(true);
-//            signUpPassword.setVisible(true);
+            titleUserID.setVisible(false);
+            signUpLogin.setVisible(true);
+            signUpPassword.setVisible(true);
             title_edit_Page.setText("Create user");
         }
 
         edit_Save_Button.setOnAction(event -> {
             String login = signUpLogin.getText();
             String password = signUpPassword.getText();
+            User user = new User();
+            user.setId(Long.parseLong(index));
             user.setName(signUpName.getText());
-            user.setTitle(signUpTitle.getText());
+            user.setTitle(signUpName.getText());
             user.setLocation(signUpLocation.getText());
             user.setGender(radio_Man.isSelected());
-            if (!login.isEmpty() && !password.isEmpty()){
+
+            if (!login.isEmpty() && !password.isEmpty()) {
                 user.setLogin(login);
-                userService.addUser(user, pass);
-            }  else {
+                userService.addUser(user, password);
+            } else {
+                user.setId(Long.parseLong(index));
                 userService.updateUser(user);
             }
             showNextPage(edit_Save_Button, AppController.PAGE_URL);
@@ -92,7 +93,7 @@ public class EditAppController extends AbstractController {
         edit_Cancel_Button.setOnAction(event -> showNextPage(edit_Cancel_Button, AppController.PAGE_URL));
     }
 
-    private void initPage() {
+    private void initPage(User user) {
         signUpName.setText(user.getName());
         signUpTitle.setText(user.getTitle());
         signUpLogin.setText(user.getLogin());
@@ -100,5 +101,4 @@ public class EditAppController extends AbstractController {
         radio_Man.setSelected(user.isGender());
         radio_Woman.setSelected(!user.isGender());
     }
-
 }

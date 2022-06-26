@@ -106,7 +106,7 @@ public class UserRepository {
             prSt.setString(2, user.getTitle());
             prSt.setString(3, user.getLocation());
             prSt.setBoolean(4, user.isGender());
-            prSt.setLong (5, user.getId());
+            prSt.setLong(5, user.getId());
             result = prSt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -114,5 +114,18 @@ public class UserRepository {
             e.printStackTrace();
         }
         return result > 0;
+    }
+
+    public boolean delete(Long id) {
+        String sql = "DELETE FROM users WHERE id = ?";
+        try (PreparedStatement prSt = dataBaseConnection.getDbConnection().prepareStatement(sql)) {
+            prSt.setLong(1, id);
+            return prSt.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 }

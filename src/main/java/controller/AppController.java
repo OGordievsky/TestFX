@@ -74,15 +74,19 @@ public class AppController extends AbstractController {
             User user = appTable.getFocusModel().getFocusedItem();
             Map<String, String> idNameSpace = new HashMap<>();
             idNameSpace.put("LabelId", String.valueOf(user.getId()));
-            idNameSpace.put("LabelVisible", "false");
             showNextPage(app_edit, EditAppController.PAGE_URL, idNameSpace);
         });
 
         app_create.setOnAction(event -> {
             Map<String, String> idNameSpace = new HashMap<>();
-            idNameSpace.put("LabelId", "0");
-            idNameSpace.put("LabelVisible", "true");
+            idNameSpace.put("LabelId", "-1");
             showNextPage(app_create, EditAppController.PAGE_URL, idNameSpace);
+        });
+
+        app_delete.setOnAction(event -> {
+            User user = appTable.getFocusModel().getFocusedItem();
+            userService.delete(user);
+            initTable();
         });
     }
 

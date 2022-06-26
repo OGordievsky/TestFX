@@ -27,4 +27,11 @@ public class UserService {
     public boolean updateUser(User user) {
         return userRepository.updateUser(user);
     }
+
+    public boolean delete(User user) {
+        if (user != null){
+            return userRepository.delete(user.getId());
+        }
+        return false;
+    }
 }
